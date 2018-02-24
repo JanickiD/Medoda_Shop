@@ -7,17 +7,21 @@
 <body>
 <head th:replace="navi/header :: navigation" />
 
-	<h2>Lista Produktów</h2>
+	<h2>Informacje o produktach</h2>
 	
 	<table>
 		<tr>
 			<th>Id</th>
 			<th>Name</th>
+			<th>Opis</th>
+			<th>Cena</th>
+			
 		</tr>
 		<tr th:each="product : ${products}">
 			<td th:text="${product.id}"/>
 			<td th:text="${product.name}"/>
-			<td><a th:href="${product.id}">View</a></td>
+			<td th:text="${product.description}"/>
+			<td th:text="${product.price}"/>
 			
 		</tr>
 	</table>
