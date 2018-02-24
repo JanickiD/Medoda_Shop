@@ -29,7 +29,7 @@ public class UserController {
 		this.roleRepository = roleRepository;
 	}
 
-	@GetMapping("/edit/{id}")
+	@GetMapping("admin/edit/{id}")
 	public String edit(@PathVariable long id, Model model) {
 		model.addAttribute("user", userService.getUserById(id));
 		model.addAttribute("roles", roleRepository.findAll());
