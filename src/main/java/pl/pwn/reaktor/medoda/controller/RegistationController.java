@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 07f659998ec11a911d50308de07c78c09b74eaf8
 package pl.pwn.reaktor.medoda.controller;
 
 import javax.validation.Valid;
@@ -51,3 +55,8 @@ public class RegistationController {
 }
 	
 	
+<<<<<<< HEAD
+=======
+	
+}
+>>>>>>> 07f659998ec11a911d50308de07c78c09b74eaf8
