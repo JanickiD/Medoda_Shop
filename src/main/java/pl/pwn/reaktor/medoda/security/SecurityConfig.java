@@ -32,8 +32,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			
 		auth
 			.jdbcAuthentication()
-			.usersByUsernameQuery("SELECT email, pass FROM user where email=?")
-			.authoritiesByUsernameQuery("SELECT u.email, r.role FROM user u inner join role r on r.role_id = u.id where u.email=?")
+			.usersByUsernameQuery("SELECT email, pass, active FROM user where email=?")
+			.authoritiesByUsernameQuery("SELECT u.email, r.role FROM user u inner join role r on u.role_id = r.role_id where u.email=?")
 			.dataSource(dataSource)
 			.passwordEncoder(bCryptPasswordEncoder);
 	}
@@ -47,9 +47,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/moderator/*").hasAnyAuthority("Moderator")
 		.anyRequest().permitAll()
 		.and()
-		.formLogin().loginPage("/login").failureUrl("/login?error=true").defaultSuccessUrl("/")
+		.formLogin()
+		.loginPage("/login").failureUrl("/login?error=true").defaultSuccessUrl("/")
 		.usernameParameter("email")
-		.passwordParameter("password")
+		.passwordParameter("pass")
 		.and()
 		.logout().logoutUrl("/logout").logoutSuccessUrl("/");
 	}

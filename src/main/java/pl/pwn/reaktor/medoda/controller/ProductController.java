@@ -22,7 +22,7 @@ private ProductService productService;
 	@GetMapping("/product")
 	private String product(Model model) {
 
-		model.addAttribute("products",productService.listAllProducts());
+		model.addAttribute("products", productService.listAllProducts());
 		return "product";
 	}
 	
