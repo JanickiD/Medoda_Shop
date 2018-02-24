@@ -41,6 +41,11 @@ public class Role {
 		this.role_id = role_id;
 		this.role = role;
 	}
+	
+	public Role(long role_id) {
+		super();
+		this.role_id = role_id;
+	}
 
 	public Role() {
 		super();

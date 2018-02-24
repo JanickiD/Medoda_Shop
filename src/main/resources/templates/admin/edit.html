@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org">
-<head th:replace="fragments/headerinc :: head">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
 <meta charset="UTF-8" />
-
+<title></title>
 </head>
 <body>
-	<header th:replace="fragments/header :: header"></header>
+<head th:replace="navi/header :: navigation" />
 	<!-- Page Header -->
 	<header class="masthead"
 		style="background-image: url('../../img/home-bg.jpg')">
@@ -24,7 +24,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-				<form th:action="@{/users/edit}" method="post" th:object="${user}">
+				<form th:action="@{/admin/edit}" method="post" th:object="${user}">
 					<input type="hidden" th:field="*{id}" />
 					<div class="control-group">
 						<div class="form-group floating-label-form-group controls">
@@ -32,7 +32,7 @@
 								class="form-control" placeholder="Email Address" id="email" />
 							<p class="help-block text-danger"></p>
 						</div>
-						<label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+						<label th:if="${#fields.hasErrors('email')}" th:errors="*{mail}"
 							class="help-blog text-danger">Email Address</label>
 					</div>
 
@@ -69,7 +69,7 @@
 						<div class="form-group floating-label-form-group controls">
 							<select class="form form-control" th:field="*{role}">
 								<option th:each="item : ${roles}" th:value="${item.id}"
-									th:text="${item.role}" />
+									th:text="${item.id}" />
 							</select> <label th:if="${#fields.hasErrors('lastName')}"
 								th:errors="*{lastName}" class="help-block text-danger">Role</label>
 						</div>
@@ -80,7 +80,7 @@
 				</form>
 
 
-				<form th:action="@{/users/changePass}" method="post"
+				<form th:action="@{/admin/changePass}" method="post"
 					th:object="${user}">
 					<input type="hidden" th:field="*{id}" />
 					<input type="hidden" th:field="*{name}" />
@@ -103,7 +103,7 @@
 			</div>
 		</div>
 	</div>
-	<div th:replace="fragments/footer :: footer"></div>
+	<!-- <div th:replace="fragments/footer :: footer"></div> -->
 
 </body>
 </html>
