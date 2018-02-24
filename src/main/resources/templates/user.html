@@ -6,7 +6,8 @@
 </head>
 <body>
 
-	<h1>Lista użytkowników<h1/>
+	<h2>Lista użytkowników</h2>
+	
 	<table>
 		<tr>
 			<th>Id</th>
@@ -16,7 +17,7 @@
 			<th>Rola</th>
 		</tr>
 		<tr th:each="user : ${user}">
-			<td th:text="${userid}"/>
+			<td th:text="${user.id}"/>
 			<td th:text="${user.email}"/>
 			<td th:text="${user.name}"/>
 			<td th:text="${user.lastName}"/>
