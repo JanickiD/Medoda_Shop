@@ -38,6 +38,8 @@ public class User {
 	@Length(min=5, message="{pl.reaktor.password.length}")
 	private String pass;
 	
+	private boolean active;
+	
 	@NotEmpty(message="{pl.reaktor.notEmpty}")
 	private String name;
 	
@@ -96,13 +98,14 @@ public class User {
 		this.role = role;
 	}
 
-	public User(long id, String email, String pass, String name, String lastName, Role role) {
+	public User(long id, String email, String pass, String name, String lastName, boolean active,Role role) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.pass = pass;
 		this.name = name;
 		this.lastName = lastName;
+		this.active = active;
 		this.role = role;
 	}
 
@@ -110,19 +113,20 @@ public class User {
 		super();
 	}
 
-	public User(String email, String pass, String name, String lastName, Role role) {
+	public User(String email, String pass, String name, String lastName, boolean active, Role role) {
 		super();
 		this.email = email;
 		this.pass = pass;
 		this.name = name;
 		this.lastName = lastName;
+		this.active = active;
 		this.role = role;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", pass=" + pass + ", name=" + name + ", lastName=" + lastName
-				 + ", role=" + role + "]";
+				+ ", active=" + active + ", role=" + role + "]";
 	}
 	
 	
