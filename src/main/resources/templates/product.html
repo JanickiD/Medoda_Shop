@@ -2,26 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>Lista Użytkowników</title>
+<title>Lista Produktów</title>
 </head>
 <body>
 
-	<h2>Lista użytkowników</h2>
+	<h2>Lista Produktów</h2>
 	
 	<table>
 		<tr>
 			<th>Id</th>
-			<th>Email</th>
 			<th>Name</th>
-			<th>Last Name</th>
-			<th>Rola</th>
+			<th>Description</th>
+			<th>Price</th>
 		</tr>
-		<tr th:each="user : ${user}">
-			<td th:text="${userid}"/>
-			<td th:text="${user.email}"/>
-			<td th:text="${user.name}"/>
-			<td th:text="${user.lastName}"/>
-			<td th:text="${user.role}"/>
+		<tr th:each="product : ${product}">
+			<td th:text="${product.id}"/>
+			<td th:text="${product.name}"/>
+			<td th:text="${product.description}"/>
+			<td th:text="${product.price}"/>
 			
 		</tr>
 	</table>
