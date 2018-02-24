@@ -58,6 +58,15 @@ public class User {
 	@JoinColumn(name="role_id")
 	private Role role;
 
+	
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	public long getId() {
 		return id;
 	}
