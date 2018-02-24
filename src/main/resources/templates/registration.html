@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
@@ -12,7 +12,9 @@
 
 		<div class="form-group">
 			<label>Imię</label> <input class="form-control"
-				placeholder="Wpisz swoje imię" th:field="*{name}" /> <br /> <label>Nazwisko</label>
+				placeholder="Wpisz swoje imię" th:field="*{name}" /> <br /> 
+				
+			<label>Nazwisko</label>
 			<input class="form-control" placeholder="Wpisz swoje nazwisko"
 				th:field="*{lastName}" /> <br /> <label>E-mail</label> <input
 				type="email" class="form-control"
