@@ -16,16 +16,16 @@ import javax.persistence.Id;
 public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long role_id;
 
 	private String role;
 
 	public long getId() {
-		return id;
+		return role_id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setId(long role_id) {
+		this.role_id = role_id;
 	}
 
 	public String getRole() {
@@ -36,9 +36,9 @@ public class Role {
 		this.role = role;
 	}
 
-	public Role(long id, String role) {
+	public Role(long role_id, String role) {
 		super();
-		this.id = id;
+		this.role_id = role_id;
 		this.role = role;
 	}
 
@@ -53,7 +53,7 @@ public class Role {
 
 	@Override
 	public String toString() {
-		return "Role [id=" + id + ", role=" + role + "]";
+		return "Role [role_id=" + role_id + ", role=" + role + "]";
 	}
 
 }

@@ -32,8 +32,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			
 		auth
 			.jdbcAuthentication()
-			.usersByUsernameQuery("SELECT email, pass, active FROM user where email=?")
-			.authoritiesByUsernameQuery("SELECT u.email, r.role FROM user u inner join role r on r.id = u.role_id where u.email=?")
+			.usersByUsernameQuery("SELECT email, pass FROM user where email=?")
+			.authoritiesByUsernameQuery("SELECT u.email, r.role FROM user u inner join role r on r.role_id = u.id where u.email=?")
 			.dataSource(dataSource)
 			.passwordEncoder(bCryptPasswordEncoder);
 	}
