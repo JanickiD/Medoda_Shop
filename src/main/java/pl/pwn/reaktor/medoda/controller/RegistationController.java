@@ -45,7 +45,7 @@ public class RegistationController {
 		model.addAttribute("status", "Rejestracja pomyślna!");
 		model.addAttribute("user", new User());
 
-		return "registration";
+		return "index";
 
 	}
 }
