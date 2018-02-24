@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymleaf.org/thymleaf-extrass-springsecurity4">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -54,16 +54,16 @@
 				<li><a th:href="@{'/'}"><i
 						class="fa fa-dashboard fa-3x"></i> Strona główna</a></li>
 
-						<li><a th:href="@{'/product'}"><i
+						<li sec:authorize="hasAuthority('Moderator')"><a th:href="@{'/product'}"><i
 						class="fa fa-dashboard fa-3x"></i> Produkty</a></li>
 						
-						<li><a th:href="@{'/login'}"><i
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{'/login'}"><i
 						class="fa fa-dashboard fa-3x"></i> Logowanie</a></li>
 						
 						<li><a th:href="@{'/registration'}"><i
 						class="fa fa-dashboard fa-3x"></i> Rejestracja</a></li>
 						
-						<li><a th:href="@{'/panel'}"><i
+						<li sec:authorize="hasAuthority('Admin')"><a th:href="@{'/panel'}" ><i
 						class="fa fa-dashboard fa-3x"></i> Panel</a></li>
 			</ul>
 		</div>

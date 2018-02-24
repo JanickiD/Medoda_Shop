@@ -11,7 +11,7 @@ package pl.pwn.reaktor.medoda.model;
 public class UserFilter {
 	private String name;
 	private String lastName;
-	private String mail;
+	private String email;
 	public String getName() {
 		return name;
 	}
@@ -25,23 +25,23 @@ public class UserFilter {
 		this.lastName = lastName;
 	}
 	public String getMail() {
-		return mail;
+		return email;
 	}
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setMail(String email) {
+		this.email = email;
 	}
-	public UserFilter(String name, String lastName, String mail) {
+	public UserFilter(String name, String lastName, String email) {
 		super();
 		this.name = name;
 		this.lastName = lastName;
-		this.mail = mail;
+		this.email = email;
 	}
 	public UserFilter() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "UserFilter [name=" + name + ", lastName=" + lastName + ", mail=" + mail + "]";
+		return "UserFilter [name=" + name + ", lastName=" + lastName + ", email=" + email + "]";
 	}
 	
 }
