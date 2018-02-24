@@ -9,7 +9,7 @@
 	<h2>Panel</h2>
 
 	<!-- Page Header -->
-	<header class="masthead"
+	<header class="masthead">
 		style="background-image: url('../img/post-bg.jpg')">
 		<div class="overlay"></div>
 		<div class="container">
@@ -24,17 +24,17 @@
 	</header>
 	
 	
-	<!--<div class="container">
-		<form th:action="@{/panel}" method="post" th:object="${filter}">
+	<div class="container"><!-- 
+		<form th:action="@{admin/panel}" method="post" th:object="${filter}">
 			<div class="form-group">
 				Name:<input type="text" th:field="*{name}" placeholder="Name" />
 				Last name:<input type="text" th:field="*{lastName}"
-					placeholder="Name" /> Mail:<input type="text" th:field="*{email}"
+					placeholder="Name" /> Mail:<input type="text" th:field="*{mail}"
 					placeholder="Name" /> <br /> <br />
 				<button type="submit" class="btn btn-primary">Search</button>
 			</div>
-		</form>
-		<br /> <br />-->
+		</form> -->
+		<br /> <br /> 
 
 
 		<div th:if="${#lists.isEmpty(users)}">Empty list Users!</div>
@@ -56,14 +56,14 @@
 					<td th:text="${user.email}"></td>
 					<td th:text="${user.active}"></td>
 					<td th:text="${user.role}"></td>
-					<td><a th:href="${'/users/view/'+user.id}">View</a></td>
-					<td><a th:href="${'/users/edit/'+user.id}">Edit</a></td>
-					<td><a th:href="${'/users/delete/'+user.id}">Delete</a></td>
+					<td><a th:href="${'/admin/view/'+user.id}">View</a></td>
+					<td><a th:href="${'/admin/edit/'+user.id}">Edit</a></td>
+					<td><a th:href="${'/admin/delete/'+user.id}">Delete</a></td>
 				</tr>
 			</table>
 
 			<!-- Pagination Bar -->
-			<!-- 
+
 			<div th:fragment='paginationbar'>
 				<div>
 					<ul class='pagination pagination-centered'>
@@ -94,10 +94,10 @@
 								→</a></li>
 					</ul>
 				</div>
-			</div> -->
+			</div>
 		</div>
 
-
+</div>
 
 </body>
 </html>

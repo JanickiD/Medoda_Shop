@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head th:replace="fragments/headerinc :: head">
+<meta charset="UTF-8" />
+
+</head>
+<body>
+	<header th:replace="fragments/header :: header"></header>
+	<!-- Page Header -->
+	<header class="masthead"
+		style="background-image: url('../../img/home-bg.jpg')">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-10 mx-auto">
+					<div class="site-heading">
+						<h1>View User</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Page Content -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+
+
+				<form th:object="${user}">
+
+					<div class="control-group">
+						<label>Name</label>
+						<p class="form-control-static" th:text="*{name}"></p>
+					</div>
+					<div class="control-group">
+						<label>Last name</label>
+						<p class="form-control-static" th:text="*{lastName}"></p>
+					</div>
+					<div class="control-group">
+						<label>eMail</label>
+						<p class="form-control-static" th:text="*{email}"></p>
+					</div>
+					<div class="control-group">
+						<label>Activ</label>
+						<p class="form-control-static" th:text="*{active}"></p>
+					</div>
+					<div class="control-group">
+						<label>Role</label>
+						<p class="form-control-static" th:text="*{role.role}"></p>
+					</div>
+					
+
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Page Footer -->
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
