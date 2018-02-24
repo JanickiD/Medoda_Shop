@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Rejestracja</title>
+</head>
+<body>
+<head th:replace="navi/header :: navigation" />
+	<h2>Rejestracja</h2>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<span th:utext="${success}"></span>
+				<form th:action="@{/register}" method="post" th:object="${user}">
+
+					<div class="control-group">
+						<div class="form-group floating-label-form-group controls">
+							<br />
+							<input type="email" th:field="*{email}" class="form-control"
+								placeholder="Email Address" id="email" />
+							<p class="help-block text-danger"></p>
+						</div>
+						<label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+							class="help-blog text-danger">Email Address</label>
+					</div>
+
+					<div class="control-group">
+						<div class="form-group floating-label-form-group controls">
+							<br />
+							<input type="password" th:field="*{pass}" class="form-control"
+								placeholder="Password" id="pass" />
+							<p class="help-block text-danger"></p>
+						</div>
+						<label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}"
+							class="help-block text-danger">Password</label>
+					</div>
+
+					<div class="control-group">
+						<div class="form-group floating-label-form-group controls">
+							<br />
+							<input type="text" th:field="*{name}" class="form-control"
+								placeholder="Name" id="name" />
+							<p class="help-block text-danger"></p>
+						</div>
+						<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+							class="help-block text-danger">Name</label>
+					</div>
+
+					<div class="control-group">
+						<div class="form-group floating-label-form-group controls">
+							<br />
+							<input type="text" th:field="*{lastName}" class="form-control"
+								placeholder="Last name" id="lastName" />
+							<p class="help-block text-danger"></p>
+						</div>
+						<label th:if="${#fields.hasErrors('lastName')}"
+							th:errors="*{lastName}" class="help-block text-danger">Last
+							name</label>
+					</div>
+
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary" id="regButton">Registration</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
