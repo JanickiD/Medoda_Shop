@@ -28,4 +28,12 @@ public class ProductService {
 		return productRepository.findOne(id);
 	}
 	
+	
+	public Product editProduct(Product product) {
+
+		return productRepository.save(product);
+	}
+	
+	
+	
 }
