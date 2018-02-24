@@ -1,10 +1,5 @@
 package pl.pwn.reaktor.medoda.service;
 
-<<<<<<< HEAD
-import java.util.Objects;
-
-import org.springframework.beans.factory.annotation.Autowired;
-=======
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
->>>>>>> 07f659998ec11a911d50308de07c78c09b74eaf8
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -29,10 +23,7 @@ import pl.pwn.reaktor.medoda.model.Role;
 import pl.pwn.reaktor.medoda.model.User;
 import pl.pwn.reaktor.medoda.repository.RoleRepository;
 import pl.pwn.reaktor.medoda.repository.UserRepository;
-<<<<<<< HEAD
-=======
 import pl.pwn.reaktor.medoda.model.UserFilter;
->>>>>>> 07f659998ec11a911d50308de07c78c09b74eaf8
 
 
 @Service
@@ -41,10 +32,7 @@ public class UserService {
 	private UserRepository userRepository;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	private RoleRepository roleRepository;
-<<<<<<< HEAD
-=======
 	private EntityManager entityManager;
->>>>>>> 07f659998ec11a911d50308de07c78c09b74eaf8
 	
 	@Autowired
 	public UserService(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder,
@@ -54,11 +42,6 @@ public class UserService {
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 		this.roleRepository = roleRepository;
 	}
-	
-<<<<<<< HEAD
-	
-=======
->>>>>>> 07f659998ec11a911d50308de07c78c09b74eaf8
 	public User addUserWithRoleUser(User user) {
 
 		user.setActive(true);
@@ -79,8 +62,6 @@ public class UserService {
 		return role;
 	}
 	
-<<<<<<< HEAD
-=======
 	public User changePass(User user) {
 		User userById = getUserById(user.getId());
 		userById.setPass(bCryptPasswordEncoder.encode(user.getPass()));
@@ -135,22 +116,8 @@ public class UserService {
 	
 	public Page<User> getAll(Pageable pageable) {
 		Page<User> users = userRepository.findAll(pageable);
-//		List<Article> articleList = articles.getContent();
-
-//		articleList
-//			.stream()
-//			.map(article -> article.setContent(article
-//									.getContent()
-//									.substring(0, article.getContent().length()>=100 ? 100:article.getContent().length()));
-
-//		for (Article article : articleList){
-//			article.setContent(article
-//					.getContent()
-//					.substring(0, article.getContent().length()>=100 ? 100:article.getContent().length()));
-//		}
 		return users;
 	}
 	
->>>>>>> 07f659998ec11a911d50308de07c78c09b74eaf8
 
 }
