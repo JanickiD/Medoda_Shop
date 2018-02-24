@@ -13,6 +13,8 @@ import pl.pwn.reaktor.medoda.model.User;
  *
  */
 @Repository
-public interface UserRepository extends JpaRepository<User, String>{
+public interface UserRepository extends JpaRepository<User, Long>{
+
+	User findOne(long id);
 
 }
