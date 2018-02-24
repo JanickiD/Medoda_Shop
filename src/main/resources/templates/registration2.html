@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/register}" role="form" method="post"
+		th:object="${user}">
+
+
+		<div class="form-group">
+			<label>Imię</label> <input class="form-control"
+				placeholder="Wpisz swoje imię" th:field="*{name}" /> <br /> 
+				
+			<label>Nazwisko</label>
+			<input class="form-control" placeholder="Wpisz swoje nazwisko"
+				th:field="*{lastName}" /> <br /> <label>E-mail</label> <input
+				type="email" class="form-control"
+				placeholder="Wpisz porawny adres email" th:field="*{email}" /> <br />
+
+			<label>Hasło</label> <input type="password" class="form-control"
+				placeholder="Wpisz hasło. Minimum 4 znaki" th:field="*{pass}" /> <br />
+
+
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-danger square-btn-adjust"
+				id="regButton">Zarejestruj</button>
+		</div>
+
+	</form>
+
+</body>
+</html>
