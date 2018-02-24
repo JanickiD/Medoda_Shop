@@ -19,6 +19,8 @@ public class WebConfig extends WebMvcConfigurerAdapter{
 	public BCryptPasswordEncoder passwordEncoder() {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 				return bCryptPasswordEncoder;
+				
+				
 	}
 
 }
