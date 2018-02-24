@@ -14,5 +14,7 @@ import pl.pwn.reaktor.medoda.model.Role;
  */
 @Repository
 public interface RoleRepository extends JpaRepository<Role, String>{
+	
+	Role findByRole(String role);	
 
 }
