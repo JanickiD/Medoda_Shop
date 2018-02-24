@@ -55,7 +55,7 @@
 					<td th:text="${user.lastName}"></td>
 					<td th:text="${user.email}"></td>
 					<td th:text="${user.active}"></td>
-					<td th:text="${user.role.role}"></td>
+					<td th:text="${user.role}"></td>
 					<td><a th:href="${'/users/view/'+user.id}">View</a></td>
 					<td><a th:href="${'/users/edit/'+user.id}">Edit</a></td>
 					<td><a th:href="${'/users/delete/'+user.id}">Delete</a></td>
@@ -63,6 +63,7 @@
 			</table>
 
 			<!-- Pagination Bar -->
+			<!-- 
 			<div th:fragment='paginationbar'>
 				<div>
 					<ul class='pagination pagination-centered'>
@@ -93,7 +94,7 @@
 								→</a></li>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 
