@@ -39,14 +39,6 @@ public class User {
 	private String pass;
 	
 	private boolean active;
-	
-	public boolean isActive() {
-		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
-	}
 
 	@NotEmpty(message="{pl.reaktor.notEmpty}")
 	private String name;
