@@ -27,21 +27,12 @@ private ProductService productService;
 	}
 	
 	
-	@GetMapping("/{id}")
+	@GetMapping("{id}")
 	public String view(@PathVariable Long id, Model model) {
 		model.addAttribute("product", productService.findById(id));
-		return "product/view";
+		model.addAttribute("products",productService.listAllProducts());
+		return "view";
 	}
 	
 	
 }
-
-
-
-//	Page<Article> pageArticle = articleService.getAll(pageable);
-//	model.addAttribute("articles", pageArticle);
-//	PageWrapper<Article> page = new PageWrapper<>(pageArticle, "/");
-//	model.addAttribute("page", page);
-//	
-//	return "index";
-//}

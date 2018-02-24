@@ -1,6 +1,5 @@
 package pl.pwn.reaktor.medoda.service;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +29,4 @@ public class ProductService {
 	}
 	
 	
-=======
-import org.springframework.stereotype.Service;
-
-@Service
-public class ProductService {
->>>>>>> 9523c338be9a74060ca811512853c4641d60a174
-	
-
 }
